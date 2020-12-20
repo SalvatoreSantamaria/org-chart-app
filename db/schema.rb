@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2020_12_02_193138) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "nodes", force: :cascade do |t|
-    t.integer "parent_id"
+    t.bigint "parent_id"
     t.text "job_title"
     t.text "first_name"
     t.text "last_name"
